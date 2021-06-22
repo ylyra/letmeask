@@ -1,10 +1,10 @@
 #pageAuth {
   display: flex;
   align-items: stretch;
-  height: 100vh;
+  min-height: 100vh;
 
   aside {
-    flex: 7;
+    flex: 6;
 
     background: var(--purple);
     color: var(--white);
