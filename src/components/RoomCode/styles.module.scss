@@ -1,0 +1,36 @@
+.roomCode {
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  background: var(--white);
+  border: 1px solid var(--purple);
+
+  display: flex;
+
+  transition: all 0.25s ease-in-out;
+
+  div {
+    background: var(--purple);
+    padding: 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  span {
+    display: block;
+    align-self: center;
+    flex: 1;
+    padding: 0 1rem 0 0.75rem;
+    width: 230px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &:active {
+    background: var(--purple);
+    color: var(--white);
+  }
+}
