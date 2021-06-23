@@ -64,3 +64,13 @@ h2 {
 button {
   cursor: pointer;
 }
+
+.error-code {
+  margin-top: 0.5rem;
+  display: block;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background: var(--danger);
+  color: var(--gray-50);
+  border-radius: 5px;
+}

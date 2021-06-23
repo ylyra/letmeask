@@ -1,30 +1,42 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 import { Button } from "../components/Button";
-//import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../hooks/useAuth";
+import { database } from "../services/firebase";
 
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
 
 import styles from "../styles/auth.module.scss";
-import { toast } from "react-toastify";
 
 type IFormInput = {
   roomName: string;
 };
 
 export function NewRoom() {
-  //const { user } = useAuth();
+  const { user } = useAuth();
+  const history = useHistory();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
 
-  const handleCreateRoom: SubmitHandler<IFormInput> = (data) => {
-    console.log(data.roomName);
-    toast.error("Missing informationn from Google Account.");
+  const handleCreateRoom: SubmitHandler<IFormInput> = async ({ roomName }) => {
+    if (roomName.trim() === "") {
+      return toast.error("A room name is required.");
+    }
+
+    const roomRef = database.ref("rooms");
+
+    const firebaseRoom = await roomRef.push({
+      title: roomName,
+      authorId: user?.id,
+    });
+
+    history.replace(`/rooms/${firebaseRoom.key}`);
   };
 
   return (
@@ -50,7 +62,9 @@ export function NewRoom() {
               placeholder="Nome da sala"
               {...register("roomName", { required: true })}
             />
-            {errors?.roomName && <span></span>}
+            {errors?.roomName && (
+              <span className="error-code">Room name is required</span>
+            )}
             <Button type="submit">Criar sala</Button>
           </form>
 
