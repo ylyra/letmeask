@@ -36,7 +36,7 @@ export function NewRoom() {
       authorId: user?.id,
     });
 
-    history.replace(`/rooms/${firebaseRoom.key}`);
+    history.push(`/rooms/${firebaseRoom.key}`);
   };
 
   return (
@@ -47,7 +47,7 @@ export function NewRoom() {
           alt="Ilustração simbolizando perguntas e respostas"
         />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvias da sua audiência em tempo-real</p>
+        <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
 
       <main>

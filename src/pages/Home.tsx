@@ -29,7 +29,7 @@ export function Home() {
     if (!user) {
       await signInWithGoogle();
     }
-    history.replace("/rooms/new");
+    history.push("/rooms/new");
   }
 
   const handleJoinRoom: SubmitHandler<IFormInput> = async ({ roomCode }) => {
@@ -43,7 +43,7 @@ export function Home() {
       return toast.error("The room you are search was not found.");
     }
 
-    history.replace(`/rooms/${roomCode}`);
+    history.push(`/rooms/${roomCode}`);
   };
 
   return (
