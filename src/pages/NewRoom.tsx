@@ -8,6 +8,7 @@ import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
 
 import styles from "../styles/auth.module.scss";
+import { toast } from "react-toastify";
 
 type IFormInput = {
   roomName: string;
@@ -21,7 +22,10 @@ export function NewRoom() {
     formState: { errors },
   } = useForm<IFormInput>();
 
-  const handleCreateRoom: SubmitHandler<IFormInput> = (data) => {};
+  const handleCreateRoom: SubmitHandler<IFormInput> = (data) => {
+    console.log(data.roomName);
+    toast.error("Missing informationn from Google Account.");
+  };
 
   return (
     <section id={styles.pageAuth}>

@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { auth, firebase } from "../services/firebase";
 
@@ -41,6 +42,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
           name: displayName,
           avatar: photoURL,
         });
+
+        toast.success(`Welcome back, ${displayName}!`);
       }
     });
 
@@ -58,7 +61,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const { displayName, photoURL, uid } = result.user;
 
       if (!displayName || !photoURL) {
-        throw new Error("Missing informationn from Google Account.");
+        toast.error("Missing informationn from Google Account.");
+        return;
       }
 
       setUser({
@@ -66,6 +70,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         name: displayName,
         avatar: photoURL,
       });
+
+      toast.success(`Welcome, ${displayName}!`);
     }
   }
 
