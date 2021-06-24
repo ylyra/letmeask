@@ -121,3 +121,29 @@
     }
   }
 }
+
+.noQuestionsContainer {
+  max-width: 290px;
+  margin: 0 auto;
+  margin-top: 5.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    margin-top: 1rem;
+    color: var(--black);
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+    color: var(--gray-dark);
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
