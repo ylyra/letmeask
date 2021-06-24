@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
@@ -6,36 +5,13 @@ import { toast } from "react-toastify";
 
 import { Button } from "../components/Button";
 import { RoomCode } from "../components/RoomCode";
+import { Question } from "../components/Question";
 import { useAuth } from "../hooks/useAuth";
+import { useRoom } from "../hooks/useRoom";
 import { database } from "../services/firebase";
 
 import logoImg from "../assets/images/logo.svg";
 import styles from "../styles/room.module.scss";
-import { Question } from "../components/Question";
-
-type FirebaseQuestions = Record<
-  string,
-  {
-    author: {
-      name: string;
-      avatar: string;
-    };
-    content: string;
-    isHighlighted: boolean;
-    isAnswered: boolean;
-  }
->;
-
-type QuestionData = {
-  id: string;
-  author: {
-    name: string;
-    avatar: string;
-  };
-  content: string;
-  isHighlighted: boolean;
-  isAnswered: boolean;
-};
 
 type RoomParams = {
   id: string;
@@ -48,38 +24,13 @@ type IFormInput = {
 export function Room() {
   const { user } = useAuth();
   const params = useParams<RoomParams>();
+  const { questions, title } = useRoom(params.id)
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm<IFormInput>();
-  const [questions, setQuestions] = useState<QuestionData[]>([]);
-  const [title, setTitle] = useState("");
-
-  useEffect(() => {
-    const roomRef = database.ref(`rooms/${params.id}`);
-
-    roomRef.on("value", (room) => {
-      const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
-
-      const parsedQuestions = Object.entries(firebaseQuestions).map(
-        ([key, value]) => {
-          return {
-            id: key,
-            content: value.content,
-            author: value.author,
-            isHighlighted: value.isHighlighted,
-            isAnswered: value.isAnswered,
-          };
-        }
-      );
-
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
-    });
-  }, [params.id]);
 
   const handleSendQuestion: SubmitHandler<IFormInput> = async ({
     newQuestion,
