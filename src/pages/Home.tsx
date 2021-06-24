@@ -43,6 +43,10 @@ export function Home() {
       return toast.error("The room you are search was not found.");
     }
 
+    if (roomRef.val().endedAt) {
+      return toast.error("Room already closed.");
+    }
+
     history.push(`/rooms/${roomCode}`);
   };
 

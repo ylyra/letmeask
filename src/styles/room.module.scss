@@ -104,5 +104,20 @@
         }
       }
     }
+
+    .likeButton {
+      display: flex;
+      align-items: flex-end;
+      color: var(--gray-dark);
+      gap: 0.5rem;
+
+      &.liked {
+        color: var(--purple);
+
+        svg path {
+          stroke: var(--purple);
+        }
+      }
+    }
   }
 }
