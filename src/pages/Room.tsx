@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -107,6 +108,10 @@ export function Room() {
 
   return (
     <section id={styles.pageRoom}>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Room {title} – LetMeAsk</title>
+      </Helmet>
       <header>
         <div className={styles.content}>
           <img src={logoImg} alt="Letmeask" />

@@ -10,6 +10,7 @@ import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
 
 import styles from "../styles/auth.module.scss";
+import { Helmet } from "react-helmet";
 
 type IFormInput = {
   roomName: string;
@@ -41,6 +42,10 @@ export function NewRoom() {
 
   return (
     <section id={styles.pageAuth}>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Create Room – LetMeAsk</title>
+      </Helmet>
       <aside>
         <img
           src={illustrationImg}
