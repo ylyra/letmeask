@@ -10,6 +10,7 @@ import { database } from "../services/firebase";
 
 import logoImg from "../assets/images/logo.svg";
 import styles from "../styles/room.module.scss";
+import { Question } from "../components/Question";
 
 type FirebaseQuestions = Record<
   string,
@@ -24,7 +25,7 @@ type FirebaseQuestions = Record<
   }
 >;
 
-type Question = {
+type QuestionData = {
   id: string;
   author: {
     name: string;
@@ -52,7 +53,7 @@ export function Room() {
     formState: { errors },
     reset,
   } = useForm<IFormInput>();
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuestionData[]>([]);
   const [title, setTitle] = useState("");
 
   useEffect(() => {
@@ -147,6 +148,14 @@ export function Room() {
             </Button>
           </div>
         </form>
+
+        {questions.map((question) => (
+          <Question
+            key={question.id}
+            content={question.content}
+            author={question.author}
+          />
+        ))}
       </main>
     </section>
   );
