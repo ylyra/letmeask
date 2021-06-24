@@ -13,6 +13,12 @@
 
   transition: filter 0.2 ease-in-out;
 
+  &.outlined {
+    background: var(--white);
+    border: 1px solid var(--purple);
+    color: var(--purple);
+  }
+
   img {
     margin-right: 0.5rem;
   }
