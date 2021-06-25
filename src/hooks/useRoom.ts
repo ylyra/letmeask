@@ -69,8 +69,6 @@ export function useRoom(roomId: string) {
         { desc: (q) => (q.isAnswered ? -1 : q.likeCount) },
       ]);
 
-      console.log(sortedQuestions);
-
       setTitle(databaseRoom.title);
       setQuestions(sortedQuestions);
     });
