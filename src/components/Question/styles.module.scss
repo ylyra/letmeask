@@ -35,6 +35,12 @@
       }
     }
 
+    > div:not(.userInfo) {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     button {
       border: 0;
       background: transparent;
