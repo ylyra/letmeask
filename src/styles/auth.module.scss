@@ -140,3 +140,27 @@
     }
   }
 }
+
+@media (max-width: 655px) {
+  #pageAuth {
+    flex-direction: column;
+    gap: 3rem;
+
+    aside {
+      padding: 2.5rem;
+      text-align: center;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    main {
+      padding-bottom: 2rem;
+
+      .mainContent h2 {
+        margin: 2rem 0 1.5rem;
+      }
+    }
+  }
+}

@@ -138,3 +138,10 @@ button {
     }
   }
 }
+
+@media (max-width: 425px) {
+  .Toastify__toast-container {
+    margin-top: 1rem;
+    padding: 0 0.45rem;
+  }
+}
