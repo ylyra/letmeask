@@ -20,7 +20,6 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 ModalContainer.setAppElement("#root");
 
 type ModalProps = {

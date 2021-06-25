@@ -65,10 +65,11 @@ export function useRoom(roomId: string) {
       );
 
       const sortedQuestions = sort(parsedQuestions).by([
-        { desc: (q) => q.isHighlighted && !q.isAnswered },
-        { desc: (q) => q.likeCount },
-        { asc: (q) => q.isAnswered },
+        { desc: (q) => q.isHighlighted },
+        { desc: (q) => (q.isAnswered ? -1 : q.likeCount) },
       ]);
+
+      console.log(sortedQuestions);
 
       setTitle(databaseRoom.title);
       setQuestions(sortedQuestions);

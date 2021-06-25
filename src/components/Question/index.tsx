@@ -29,9 +29,6 @@ export function Question({
         { [`${styles.highlighted}`]: isHighlighted && !isAnswered }
       )}
     >
-      {/*`${styles.question} ${isAnswered ? styles.answered : ""} ${
-        isHighlighted ? styles.highlighted : ""
-      }`*/}
       <p>{content}</p>
 
       <footer>

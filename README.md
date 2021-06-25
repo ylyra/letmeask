@@ -1,0 +1,9 @@
+- Lista ordenada
+- Login com google na página room
+- Criação de cores como var no global.scss
+- Uso do react-helmet para SEO
+- Implementação do react-toastify para toast elegantes
+- Implementação do react-modal para melhores modais
+- Implementação do react-hook-form para integrar formulários e não ter renderização desnecessária
+- Implementação do use-context-selector para melhor desempenho e para testar
+- Responsividade do site
