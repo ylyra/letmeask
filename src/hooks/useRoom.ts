@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { sort } from "fast-sort";
+
 import { database } from "../services/firebase";
 import { useAuth } from "./useAuth";
 
@@ -62,8 +64,14 @@ export function useRoom(roomId: string) {
         }
       );
 
+      const sortedQuestions = sort(parsedQuestions).by([
+        { desc: (q) => q.isHighlighted && !q.isAnswered },
+        { desc: (q) => q.likeCount },
+        { asc: (q) => q.isAnswered },
+      ]);
+
       setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
+      setQuestions(sortedQuestions);
     });
 
     return () => {
