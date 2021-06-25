@@ -22,7 +22,7 @@ type IFormInput = {
 };
 
 export function Room() {
-  const { user } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
   const params = useParams<RoomParams>();
   const roomId = params.id;
 
@@ -80,6 +80,12 @@ export function Room() {
     }
   }
 
+  async function handleSignIn() {
+    if (!user) {
+      await signInWithGoogle();
+    }
+  }
+
   return (
     <section id={styles.pageRoom}>
       <Helmet>
@@ -118,7 +124,11 @@ export function Room() {
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta, <button>faça seu login</button>.
+                Para enviar uma pergunta,{" "}
+                <button type="button" onClick={handleSignIn}>
+                  faça seu login
+                </button>
+                .
               </span>
             )}
 
