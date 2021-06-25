@@ -18,7 +18,7 @@ export function RoomCode({ code }: RoomCodeProps) {
         <img src={copyImg} alt="Copy room code" />
       </div>
 
-      <span>Sala #{code}</span>
+      <span>Copiar código</span>
     </button>
   );
 }

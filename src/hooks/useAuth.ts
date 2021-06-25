@@ -1,8 +1,20 @@
-import { useContext } from "react";
+import { useContextSelector } from "use-context-selector";
 import { AuthContext } from "../contexts/AuthContext";
 
 export function useAuth() {
-  const authProvider = useContext(AuthContext);
+  const user = useContextSelector(AuthContext, (auth) => auth.user);
+  const signInWithGoogle = useContextSelector(
+    AuthContext,
+    (auth) => auth.signInWithGoogle
+  );
 
-  return authProvider;
+  return {
+    // data
+    user,
+
+    // booleans
+
+    // functions
+    signInWithGoogle,
+  };
 }
