@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -52,6 +53,10 @@ export function Home() {
 
   return (
     <section id={styles.pageAuth}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home Page – LetMeAsk</title>
+      </Helmet>
       <aside>
         <img
           src={illustrationImg}
