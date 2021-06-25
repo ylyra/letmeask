@@ -8,6 +8,19 @@
     margin-top: 0.5rem;
   }
 
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid var(--purple);
+
+    footer .user-info span {
+      color: var(--black);
+    }
+  }
+
+  &.answered {
+    background: var(--gray-light);
+  }
+
   p {
     color: var(--black);
   }
