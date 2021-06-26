@@ -92,6 +92,7 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 - Lista de questões ordenada (caso esteja marcada
   como highlighted vai para o topo e caso marcada como answered para o final da lista e existe uma ordenação no meio para as mais votadas).
+  
 - Login com google na página room.
 
 - Criação de cores como var no global.scss.
@@ -100,12 +101,15 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 - Implementação do react-toastify para toast
   elegantes.
+
 - Implementação do react-modal para melhores modais.
 
 - Implementação do react-hook-form para integrar
   formulários e não ter renderização desnecessária.
+
 - Implementação do use-context-selector para melhor
   desempenho e para testar do mesmo.
+  
 - Responsividade do site.
 
 ---
