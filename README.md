@@ -112,7 +112,7 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 <p align="center">
   <a href="https://letmeask.yanlyra.com.br/">
-    <img src="https://img.shields.io/static/v1?label=Site&message=LetMeAsk&color=7159c1&style=for-the-badge&logo=ghost"/>
+    <img src="https://img.shields.io/static/v1?label=Site&message=LetMeAsk&color=835afd&style=for-the-badge&logo=ghost"/>
   </a>
 </p>
 
