@@ -139,9 +139,13 @@ button {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .Toastify__toast-container {
     margin-top: 1rem;
     padding: 0 0.45rem;
+  }
+
+  .Toastify__toast {
+    margin-top: 0.45rem;
   }
 }
