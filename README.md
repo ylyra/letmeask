@@ -52,7 +52,7 @@ yarn
 
 ## Firebase
 
-Após clonarem o projeto e iniciarem o mesmo, será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database. Após criarem as configurações no Firebase crie um arquivo `.env.local` e preencha o mesmo com as informações que o firebase disponibilizou utilizando os nomes de váriaveis encontrato em `.env.example`.
+Após clonarem o projeto e iniciarem o mesmo, será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database. Após criarem as configurações no Firebase crie um arquivo `.env.local` e preencha o mesmo com as informações que o firebase disponibilizou utilizando os nomes de variáveis encontradas em `.env.example`.
 
 ## Iniciando
 
@@ -114,4 +114,10 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
   <a href="https://letmeask.yanlyra.com.br/">
     <img src="https://img.shields.io/static/v1?label=Site&message=LetMeAsk&color=7159c1&style=for-the-badge&logo=ghost"/>
   </a>
+</p>
+
+---
+
+<p align="center">
+Feito com 💜 durante a <a href="http://nextlevelweek.com/">NLW#06</a>
 </p>
